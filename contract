@@ -13,7 +13,8 @@ contract sample
 
     
     mapping(uint256 => user) m_user;
-
+        //candidate_list [] public m_candidate_list;
+    
     function newUser (string _fname, string _lname,string _email, uint256 _phnumber) public {
         m_user[_phnumber] = user(_fname,_lname,_email,_phnumber);
     }
@@ -24,3 +25,4 @@ contract sample
     
     
 }
+
