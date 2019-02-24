@@ -1,4 +1,4 @@
-pragma solidity ^0.4.16;
+pragma solidity ^0.5.0;
 
 contract sample
 {
@@ -15,14 +15,13 @@ contract sample
     mapping(uint256 => user) m_user;
         //candidate_list [] public m_candidate_list;
     
-    function newUser (string _fname, string _lname,string _email, uint256 _phnumber) public {
+    function newUser (string memory _fname, string memory _lname,string memory _email, uint256 _phnumber) public {
         m_user[_phnumber] = user(_fname,_lname,_email,_phnumber);
     }
     
-    function getUser(uint256 _pass) constant public returns(string,string,string) {
-        return (m_user[_pass].fname,m_user[_pass].lname,m_user[_pass].email);
+    function getUser(uint256 _phnumber) public view returns(string memory,string memory,string memory) {
+        return (m_user[_phnumber].fname,m_user[_phnumber].lname,m_user[_phnumber].email);
     }
     
     
 }
-
